@@ -1,0 +1,25 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Edit here</title>
+<link rel="stylesheet" href="/css/edit.css" type="html/text">
+</head>
+<body><center>
+<div class="aa">
+	<font color="red"> ${message}</font>
+	<form action="/editUser" method="POST">
+		<br /> <br />
+		Name                    :       &nbsp;&nbsp;   &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;&nbsp;    <input name="name" type="text" readonly="true" value="${users.user}" /> <br><br>
+		Old Password            :       &nbsp;&nbsp;      <input name="password"
+			type="password" required="required" /> <br><br>
+	    New Password            :     &nbsp;&nbsp;       <input
+			name="newPassword" type="password" required="required" /> <br><br>
+        Confirm Password        :    &nbsp;         <input name="confirmPassword" type="password"
+			   required="required" />
+<br><br>			   <input type="submit" value="Submit" />
+	</form>
+	<a href="/addUser">ADD USERS</a>
+	</div>
+	</center>
+</body>
+</html>

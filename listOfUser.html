@@ -1,0 +1,40 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>List Of Users</title>
+<link rel="stylesheet" href="/css/listOfUser.css" type="html/text">
+
+</head>
+<body>
+<div align="center">
+  <input name="Airline_Information" type="button" value="Airline_Information" />
+  <input name="Flight_Management" type="button" value="Flight_Management" />
+  <input name="Airport_Information" type="button" value="Airport_Information" /> 
+  <input name="Schedule_Management" type="button" value="Schedule_Management" />
+    <br />
+</div><center>
+<div class="aa">
+	<div style="overflow-x:auto;">
+	
+	<table>
+		<tr>
+			<th>User</th>
+			<th>Password</th>
+			<th>Edit</th>
+			<th>Delete</th>
+
+		</tr>
+		<c:forEach items="${listUsers}" var="list">
+			<tr>	
+				<td>${list.user}</td>
+				<td>${list.password}</td>
+				<td><a href='editUser?user=<c:out value ="${list.user}"/>'>EDIT</a></td>
+				<td><a href='deleteUser?user=<c:out value ="${list.user}"/>'>DELETE</a></td>
+			</tr>
+		</c:forEach>
+	</table>
+	</div></div></center>
+
+</body>
+</html>
