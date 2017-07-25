@@ -1,15 +1,17 @@
 <html>
 <head>
-<title>Yahoo!!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>List Of Users</title>
 <style type="text/css">
 body {
-	background-image: url(/image/aeroplane4.jpg);
+	background-image: url(/image/aeroplane2.jpg);
 	background-size: cover;
 }
+
 .aa {
 	margin: 0 auto;
-	width: 470px;
-	height: 300px;
+	width: 800px;
+	height: 500px;
 	background-color: rgba(0, 0, 0, 0.4);
 	margin-top: 30px;
 	padding-left: 0px;
@@ -20,6 +22,7 @@ body {
 	font-size: 18px;
 	box-shadow: inset -5px -5px rgba(0, 0, 0, 0.5);
 }
+
 .aa input[type="text"] {
 	width: 220px;
 	height: 35px;
@@ -27,6 +30,7 @@ body {
 	padding-left: 5px;
 	border: 0;
 }
+
 .aa input[type="text"] {
 	width: 220px;
 	height: 35px;
@@ -34,16 +38,19 @@ body {
 	padding-left: 5px;
 	border: 0;
 }
-.aa input[type="submit"] {
-	width: 100px;
-	height: 35px;
-	border-radius: 5px;
-	background-color: orange;
-	border: 0;
-	font-weight: bolder;
+
+table, td, th {
+	color: silver;
+	border: 2px solid white;
 }
-.aa input[type="submit"]:hover {
-	mouse: pointer;
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td {
+	height: 50px;
 }
 </style>
 </head>
@@ -55,20 +62,29 @@ body {
   <input name="Schedule_Management" type="button" value="Schedule Management" />
     <br />
 </div>
-<div class ="aa" align = "center">
-    <p><font color="red">${errorMessage}</font></p>
-    <br>
-    <form action="/happytrip/addAirlines" method="POST">
-    <H3>ADD AIRLINES</H3>
-        Name : &nbsp; &nbsp; <input name="name" type="text" required="required" value=" ${addAirlines.name} "/> 
-        <br><br>
-        Code : &nbsp; &nbsp;<input name="code" type="text" required="required" value= "${addAirlines.code}" /> 
-        <br><br>
-         <input type="submit" />
-         <br><br>
-     <a href="/happytrip/listOfAirlines">List Of Airlines</a>
-          
-    </form>
-    </div>
+	<div class="aa" align="center" style="richness: inherit;">
+		<div style="overflow-x: auto;">
+			<table>
+				<tr>
+					<th>User</th>
+					<th>Password</th>
+					<th>Edit</th>
+					<th>Delete</th>
+
+				</tr>
+				<c:forEach items="${listUsers}" var="list">
+					<tr>
+						<td>${list.user}</td>
+						<td>${list.password}</td>
+						<td><a
+							href='/happytrip/editUser?user=<c:out value ="${list.user}"/>'>EDIT</a></td>
+						<td><a
+							href='/happytrip/deleteUser?user=<c:out value ="${list.user}"/>'>DELETE</a></td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
+	</div>
+
 </body>
-</html>
+				</html>

@@ -2,12 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>List Of Airlines</title>
+<title>List Of Airport</title>
 <style type="text/css">
 body {
-	background-image: url(/image/airplane1.jpg);
+	background-image: url(/image/aeroplane2.jpg);
 	background-size: cover;
 }
+
 .aa {
 	margin: 0 auto;
 	width: 800px;
@@ -22,6 +23,7 @@ body {
 	font-size: 18px;
 	box-shadow: inset -5px -5px rgba(0, 0, 0, 0.5);
 }
+
 .aa input[type="text"] {
 	width: 220px;
 	height: 35px;
@@ -29,6 +31,7 @@ body {
 	padding-left: 5px;
 	border: 0;
 }
+
 .aa input[type="text"] {
 	width: 220px;
 	height: 35px;
@@ -36,21 +39,23 @@ body {
 	padding-left: 5px;
 	border: 0;
 }
+
 table, td, th {
-color:silver;
+	color: silver;
 	border: 2px solid white;
 }
+
 table {
 	border-collapse: collapse;
 	width: 100%;
 }
+
 td {
 	height: 50px;
-	}
-	</style>
+}
+</style>
 </head>
 <body>
-
 <div align="center" style="richness:inherit; ">
   <input name="Airline_Information" type="button" value="Airline Information" />
   <input name="Flight_Management" type="button" value="Flight Management" />
@@ -58,31 +63,36 @@ td {
   <input name="Schedule_Management" type="button" value="Schedule Management" />
     <br />
 </div>
-<div class="aa" align="center" style="richness:inherit; ">
-	<div style="overflow-x: auto;">
-		<table>
-			<tr>
-				<th>Code</th>
-				<th>Name</th>
-				<th>Edit</th>
-				<th>Delete</th>
 
+	<div class="aa" align="center" style="richness: inherit;">
 
-			</tr>
-			<c:forEach items="${message}" var="list">
+		<div style="overflow-x: auto;">
+			<table>
 				<tr>
-					<td>${list.code}</td>
-					<td>${list.name}</td>
-
-					<td><a
-						href='/happytrip/editAirline?code=<c:out value ="${list.code}"/>'>EDIT</a></td>
-					<td><a
-						href='/happytrip/deleteAirline?code=<c:out value ="${list.code}"/>'>DELETE</a></td>
+					<th>Name Of Flight</th>
+					<th>Flight Number</th>
+					<th>Associated To Airline</th>
+					<th>Number Of Seats</th>
+					<th>Edit</th>
+					<th>Delete</th>
 				</tr>
-			</c:forEach>
-		</table>
+				<c:forEach items="${listFlight}" var="list">
+					<tr>
+						<td>${list.flightName}</td>
+						<td>${list.flightNumber}</td>
+						<td>${list.flightAirline}</td>
+						<td>${list.numberOfSeats}</td>
+						<td><a
+							href='/happytrip/editFlight?flightNumber=<c:out value ="${list.flightNumber}"/>'>EDIT</a></td>
+						<td><a
+							href='/happytrip/deleteFlight?flightNumber=<c:out value ="${list.flightNumber}"/>'>DELETE</a></td>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
 	</div>
-	</div>
-	<a href="/happytrip/addAirlines" >ADD Airlines</a>
+	<a href="/happytrip/addFlight"><b>
+			<button>Add Flight</button>
+	</b></a>
 </body>
 </html>

@@ -1,24 +1,26 @@
+
 <html>
 <head>
-<title>Yahoo!!</title>
+<title>Edit Airline</title>
+
 <style type="text/css">
 body {
-	background-image: url(/image/aeroplane4.jpg);
+	background-image: url(/image/aeroplane2.jpg);
 	background-size: cover;
 }
 .aa {
 	margin: 0 auto;
 	width: 470px;
-	height: 300px;
-	background-color: rgba(0, 0, 0, 0.4);
+	height: 330px;
+	background-color: rgba(0, 0, 0, 0.3);
 	margin-top: 30px;
 	padding-left: 0px;
-	padding-top: 20px;
-	border-radius: 10px;
-	color: white;
+	padding-top: 30px;
+	border-radius: 20px;
+	color:activeborder ;
 	font-weight: bolder;
 	font-size: 18px;
-	box-shadow: inset -5px -5px rgba(0, 0, 0, 0.5);
+	box-shadow: inset -5px -5px rgba(0.1, 0, 0, 0.3);
 }
 .aa input[type="text"] {
 	width: 220px;
@@ -55,20 +57,23 @@ body {
   <input name="Schedule_Management" type="button" value="Schedule Management" />
     <br />
 </div>
-<div class ="aa" align = "center">
-    <p><font color="red">${errorMessage}</font></p>
-    <br>
-    <form action="/happytrip/addAirlines" method="POST">
-    <H3>ADD AIRLINES</H3>
-        Name : &nbsp; &nbsp; <input name="name" type="text" required="required" value=" ${addAirlines.name} "/> 
-        <br><br>
-        Code : &nbsp; &nbsp;<input name="code" type="text" required="required" value= "${addAirlines.code}" /> 
-        <br><br>
-         <input type="submit" />
-         <br><br>
-     <a href="/happytrip/listOfAirlines">List Of Airlines</a>
-          
-    </form>
-    </div>
+
+<div class="aa" align="center">
+
+
+	<font color="red"> ${message}</font>
+	<form action="/happytrip/editAirline" method="POST">
+	<h3>EDIT AIRLINE</h3>
+		<br /> <br /> 
+		Airlines Code : <input name="code" type="text"
+			readonly="true" value="${CODE}" /> 
+			<br> <br>
+			New Name : <input name="name" type="text" required="required" /> 
+			<br>
+			<br>
+			<input type="submit"
+			value="Submit" />
+	</form>
+	</div>
 </body>
 </html>

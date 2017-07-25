@@ -1,6 +1,7 @@
 <html>
 <head>
-<title>Yahoo!!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Edit Airport</title>
 <style type="text/css">
 body {
 	background-image: url(/image/aeroplane4.jpg);
@@ -9,16 +10,23 @@ body {
 .aa {
 	margin: 0 auto;
 	width: 470px;
-	height: 300px;
-	background-color: rgba(0, 0, 0, 0.4);
+	height: 330px;
+	background-color: rgba(0, 0, 0, 0.3);
 	margin-top: 30px;
 	padding-left: 0px;
-	padding-top: 20px;
-	border-radius: 10px;
-	color: white;
+	padding-top: 30px;
+	border-radius: 20px;
+	color:activeborder ;
 	font-weight: bolder;
 	font-size: 18px;
-	box-shadow: inset -5px -5px rgba(0, 0, 0, 0.5);
+	box-shadow: inset -5px -5px rgba(0.1, 0, 0, 0.3);
+}
+.aa input[type="text"] {
+	width: 220px;
+	height: 35px;
+	border-radius: 5px;
+	padding-left: 5px;
+	border: 0;
 }
 .aa input[type="text"] {
 	width: 220px;
@@ -55,20 +63,18 @@ body {
   <input name="Schedule_Management" type="button" value="Schedule Management" />
     <br />
 </div>
-<div class ="aa" align = "center">
-    <p><font color="red">${errorMessage}</font></p>
-    <br>
-    <form action="/happytrip/addAirlines" method="POST">
-    <H3>ADD AIRLINES</H3>
-        Name : &nbsp; &nbsp; <input name="name" type="text" required="required" value=" ${addAirlines.name} "/> 
-        <br><br>
-        Code : &nbsp; &nbsp;<input name="code" type="text" required="required" value= "${addAirlines.code}" /> 
-        <br><br>
-         <input type="submit" />
-         <br><br>
-     <a href="/happytrip/listOfAirlines">List Of Airlines</a>
-          
-    </form>
-    </div>
+
+<div class="aa" align="center">
+
+	<font color="red"> ${message}</font>
+	<form action="/happytrip/editAirport" method="POST">
+		<br /> <br /> Airport Code : &nbsp; <input name="code" type="text"
+			readonly="true" value="${code}" /> 
+			<br> <br>
+			New Name : &nbsp; &nbsp; &nbsp;<input name="name" type="text" required="required" />
+			<br><br> New City : &nbsp; &nbsp; &nbsp; &nbsp;<input name="city" type="text" required="required" />
+			<br><br> <input type="submit" value="Submit" />
+	</form>
+	</div>
 </body>
 </html>
