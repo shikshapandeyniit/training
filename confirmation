@@ -1,0 +1,24 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Confirmation Page</title>
+</head>
+<body>
+	<p></p>
+	<form action="/confirmation" >
+		Name : <input name="name" type="text" required="required" />
+		 FlightName : <input name="flightName" type="text" required="required" />
+		Date Of Departure: <input name="dateOfDeparture" type="text"
+			required="required" /> 
+			Flight Code: <input name="flightCode"
+			type="text" required="required" />
+			 Departure Time: <input
+			name="dateOfDeparture" type="text" required="required" />
+			 Arrival Time: <input name="arrivalTime" type="text" required="required" />
+			  No Of Tickets: <input name="noOfTickets" type="text" required="required" />
+		Amount: <input name="amount" type="text" required="required" /> 
+			<input type="button" value="submit">
+
+	</form>
+</body>
+</html>
